@@ -1,8 +1,6 @@
 from django.db import models
 from datetime import date
 
-from django.contrib.auth.models import User
-
 # Create your models here.
 
 class Song(models.Model):
@@ -11,10 +9,10 @@ class Song(models.Model):
     author = models.CharField(max_length=100)
     base_key = models.CharField(max_length=2)
     tempo = models.IntegerField()
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
+    #created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creator")
     created_on = models.DateField(default=date.today)
     last_updated = models.DateTimeField(default=date.today)
-    updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="last_modifier")
+    #updated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name="last_modifier")
     content = models.TextField()
 
     class Meta:
