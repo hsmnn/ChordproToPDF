@@ -21,5 +21,5 @@ from chordproapi import views as chordproapi_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/song/', chordproapi_views.SongList.as_view(), name='song-list'),
-
+    path('api/song/<int:song_id>/', chordproapi_views.SongDetail.as_view(), name='task-detail'),
 ]
